@@ -58,6 +58,18 @@ export class DraftCoursesComponent {
     );
   }
 
+  editCourse(courseId: number): void {
+      console.log(this.courses);
+      console.log(courseId);
+      localStorage.setItem('editCourse', JSON.stringify(courseId));
+      this.router.navigate(['/edit-course']);
+
+    }
+
+    editMaterial(courseId: number): void {
+      // implement add material functionality
+    }
+
   deleteCourse(courseId: number): void {
       const url = `http://localhost:8080/api/courses/${courseId}/delete`;
       this.http.put<any>(url, { isDeleted: true }).subscribe(

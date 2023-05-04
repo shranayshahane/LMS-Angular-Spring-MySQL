@@ -1,6 +1,7 @@
 package com.Eduline.LMS.courses;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -77,6 +78,19 @@ public class CourseController {
 	public ResponseEntity<Course> updateIsAuthorized(@PathVariable Long id, @RequestBody Course request) {
 		Course updatedCourse = courseService.updateIsAuthorizedById(id, request.getIsAuthorized());
 		return ResponseEntity.ok(updatedCourse);
+	}
+
+	@CrossOrigin
+	@PutMapping("/update/{courseId}")
+	public ResponseEntity<Course> updateCourseById(@PathVariable Long courseId, @RequestBody Course course) {
+		Course updatedCourse = courseService.updateCourseById(courseId, course);
+		return new ResponseEntity<>(updatedCourse, HttpStatus.OK);
+	}
+
+	@CrossOrigin
+	@GetMapping("/category/{categoryId}")
+	public List<Course> getCoursesByCategoryId(@PathVariable Long categoryId) {
+		return courseService.getAllCoursesByCategoryId(categoryId);
 	}
 
 }

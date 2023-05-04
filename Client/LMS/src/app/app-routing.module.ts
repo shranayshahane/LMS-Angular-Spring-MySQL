@@ -31,6 +31,7 @@ import { InstructorRequestsComponent } from './admin-landing/instructor-requests
 import { CourseRequestsComponent } from './admin-landing/course-requests/course-requests.component';
 import { AuthGuard } from './services/auth.guard';
 import { ManageCategoriesComponent } from './admin-landing/manage-categories/manage-categories.component';
+import { EditCourseComponent } from './instructor-landing/edit-course/edit-course.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
@@ -62,6 +63,7 @@ const routes: Routes = [
    { path: 'create-course', component: CreateCourseComponent },
     { path: 'published-courses', component: PublishedCoursesComponent },
     { path: 'draft-courses', component: DraftCoursesComponent },
+    { path: 'edit-course', component: EditCourseComponent },
     { path: 'instructor-faq', component: InstructorFaqComponent },
     { path: 'instructor-profile', component: InstructorProfileComponent },
     { path: 'instructor-dashboard', component: InstructorDashboardComponent },

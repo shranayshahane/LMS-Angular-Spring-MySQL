@@ -66,6 +66,7 @@ public class CourseService {
 		Course course = courseRepository.findById(courseId)
 				.orElseThrow(() -> new RuntimeException("Course not found"));
 		course.setIsPublished(isPublished);
+		updateIsAuthorizedById(courseId, false);
 		return courseRepository.save(course);
 	}
 
@@ -81,6 +82,26 @@ public class CourseService {
 				.orElseThrow(() -> new RuntimeException("Course not found"));
 		course.setIsAuthorized(isAuthorized);
 		return courseRepository.save(course);
+	}
+
+	public Course updateCourseById(Long courseId, Course updatedCourse) {
+		Course course = courseRepository.findById(courseId)
+				.orElseThrow(() -> new RuntimeException("Course not found"));
+
+		// Update the course with the new information
+		course.setTitle(updatedCourse.getTitle());
+		course.setDescription(updatedCourse.getDescription());
+		course.setKeywords(updatedCourse.getKeywords());
+		course.setThumbnail(updatedCourse.getThumbnail());
+		course.setCategoryId(updatedCourse.getCategoryId());
+		course.setPrice(updatedCourse.getPrice());
+		course.setIsAuthorized(false);
+
+		return courseRepository.save(course);
+	}
+
+	public List<Course> getAllCoursesByCategoryId(Long categoryId) {
+		return courseRepository.findByCategoryId(categoryId);
 	}
 
 }

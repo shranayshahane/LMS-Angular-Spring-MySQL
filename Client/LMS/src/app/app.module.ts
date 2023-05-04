@@ -54,6 +54,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSelectModule } from '@angular/material/select';
+import { EditCourseComponent } from './instructor-landing/edit-course/edit-course.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +90,8 @@ import { MatSelectModule } from '@angular/material/select';
     InstructorNavbarComponent,
     StudentNavbarComponent,
     AdminNavbarComponent,
-    ManageCategoriesComponent
+    ManageCategoriesComponent,
+    EditCourseComponent
   ],
   imports: [
     BrowserModule,
