@@ -9,11 +9,14 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+import com.Eduline.LMS.course_materials.*;
+
 @Service
 public class CourseService {
 
 	@Autowired
 	private CourseRepository courseRepository;
+	private CourseMaterialService courseMaterialService;
 
 	public List<Course> getAllCourses(){
 		return courseRepository.findAll();
@@ -104,4 +107,20 @@ public class CourseService {
 		return courseRepository.findByCategoryId(categoryId);
 	}
 
+	public void deleteCoursesByCategoryId(Long categoryId) {
+		List<Course> courses = courseRepository.findByCategoryId(categoryId);
+		for (Course course : courses) {
+			System.out.println(course.getId());
+			courseMaterialService.deleteCourseMaterialByCourseId(course.getId());
+		}
+		courseRepository.deleteAll(courses);
+	}
+
+	public List<Course> getAllPublishedCourses() {
+		return courseRepository.findByIsPublishedTrue();
+	}
+
+	public List<Course> getAllPublishedCoursesByCategoryId(Long categoryId) {
+		return courseRepository.findByIsPublishedTrueAndCategoryId(categoryId);
+	}
 }

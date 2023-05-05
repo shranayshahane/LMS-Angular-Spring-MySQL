@@ -60,7 +60,7 @@ export class EditCourseComponent {
       this.router.navigate(['/blocked']);
     }
     this.getCategories();
-    const courseData = JSON.parse(localStorage.getItem('editCourse') || '{}');
+    const courseData = JSON.parse(sessionStorage.getItem('editCourse') || '{}');
         this.courseId = courseData.id;
         this.title = courseData.title;
         this.description = courseData.description;

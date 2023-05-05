@@ -2,6 +2,7 @@ package com.Eduline.LMS.course_categories;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.Eduline.LMS.courses.CourseService;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,6 +12,7 @@ public class CourseCategoryService {
 
 	@Autowired
 	private CourseCategoryRepository courseCategoryRepository;
+	private CourseService courseService;
 
 	public List<CourseCategory> getAllCategories() {
 		return courseCategoryRepository.findAll();
@@ -35,6 +37,8 @@ public class CourseCategoryService {
 	}
 
 	public void deleteCategory(int categoryId) {
+		Long categoryIdLong = (long) categoryId;
+		courseService.deleteCoursesByCategoryId(categoryIdLong);
 		courseCategoryRepository.deleteById(categoryId);
 	}
 }

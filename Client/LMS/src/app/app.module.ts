@@ -55,6 +55,20 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSelectModule } from '@angular/material/select';
 import { EditCourseComponent } from './instructor-landing/edit-course/edit-course.component';
+import { EditMaterialComponent } from './instructor-landing/edit-material/edit-material.component';
+import { MatSortModule } from '@angular/material/sort';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AddPdfMaterialComponent } from './instructor-landing/add-pdf-material/add-pdf-material.component';
+import { AddVideoMaterialComponent } from './instructor-landing/add-video-material/add-video-material.component';
+import { AddTextMaterialComponent } from './instructor-landing/add-text-material/add-text-material.component';
+import { AddFileMaterialComponent } from './instructor-landing/add-file-material/add-file-material.component';
+import { AddOcrMaterialComponent } from './instructor-landing/add-ocr-material/add-ocr-material.component';
+import { EditPdfMaterialComponent } from './instructor-landing/edit-pdf-material/edit-pdf-material.component';
+import { EditVideoMaterialComponent } from './instructor-landing/edit-video-material/edit-video-material.component';
+import { EditTextMaterialComponent } from './instructor-landing/edit-text-material/edit-text-material.component';
+import { EditFileMaterialComponent } from './instructor-landing/edit-file-material/edit-file-material.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [
@@ -91,7 +105,17 @@ import { EditCourseComponent } from './instructor-landing/edit-course/edit-cours
     StudentNavbarComponent,
     AdminNavbarComponent,
     ManageCategoriesComponent,
-    EditCourseComponent
+    EditCourseComponent,
+    EditMaterialComponent,
+    AddPdfMaterialComponent,
+    AddVideoMaterialComponent,
+    AddTextMaterialComponent,
+    AddFileMaterialComponent,
+    AddOcrMaterialComponent,
+    EditPdfMaterialComponent,
+    EditVideoMaterialComponent,
+    EditTextMaterialComponent,
+    EditFileMaterialComponent
   ],
   imports: [
     BrowserModule,
@@ -114,7 +138,10 @@ import { EditCourseComponent } from './instructor-landing/edit-course/edit-cours
     MatTableModule,
     MatOptionModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSortModule,
+    DragDropModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

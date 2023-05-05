@@ -32,6 +32,16 @@ import { CourseRequestsComponent } from './admin-landing/course-requests/course-
 import { AuthGuard } from './services/auth.guard';
 import { ManageCategoriesComponent } from './admin-landing/manage-categories/manage-categories.component';
 import { EditCourseComponent } from './instructor-landing/edit-course/edit-course.component';
+import { EditMaterialComponent } from './instructor-landing/edit-material/edit-material.component';
+import { AddPdfMaterialComponent } from './instructor-landing/add-pdf-material/add-pdf-material.component';
+import { AddVideoMaterialComponent } from './instructor-landing/add-video-material/add-video-material.component';
+import { AddTextMaterialComponent } from './instructor-landing/add-text-material/add-text-material.component';
+import { AddFileMaterialComponent } from './instructor-landing/add-file-material/add-file-material.component';
+import { AddOcrMaterialComponent } from './instructor-landing/add-ocr-material/add-ocr-material.component';
+import { EditPdfMaterialComponent } from './instructor-landing/edit-pdf-material/edit-pdf-material.component';
+import { EditVideoMaterialComponent } from './instructor-landing/edit-video-material/edit-video-material.component';
+import { EditTextMaterialComponent } from './instructor-landing/edit-text-material/edit-text-material.component';
+import { EditFileMaterialComponent } from './instructor-landing/edit-file-material/edit-file-material.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
@@ -67,6 +77,16 @@ const routes: Routes = [
     { path: 'instructor-faq', component: InstructorFaqComponent },
     { path: 'instructor-profile', component: InstructorProfileComponent },
     { path: 'instructor-dashboard', component: InstructorDashboardComponent },
+    { path: 'edit-material', component: EditMaterialComponent },
+    { path: 'add-pdf-material', component: AddPdfMaterialComponent },
+    { path: 'add-video-material', component: AddVideoMaterialComponent },
+    { path: 'add-text-material', component: AddTextMaterialComponent },
+    { path: 'add-file-material', component: AddFileMaterialComponent },
+    { path: 'add-ocr-material', component: AddOcrMaterialComponent },
+    { path: 'edit-pdf-material', component: EditPdfMaterialComponent },
+    { path: 'edit-video-material', component: EditVideoMaterialComponent },
+    { path: 'edit-text-material', component: EditTextMaterialComponent },
+    { path: 'edit-file-material', component: EditFileMaterialComponent },
 
     { path: 'homepage', component: HomepageComponent },
 ];

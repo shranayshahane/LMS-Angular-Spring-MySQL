@@ -61,13 +61,15 @@ export class DraftCoursesComponent {
   editCourse(courseId: number): void {
       console.log(this.courses);
       console.log(courseId);
-      localStorage.setItem('editCourse', JSON.stringify(courseId));
+      sessionStorage.setItem('editCourse', JSON.stringify(courseId));
       this.router.navigate(['/edit-course']);
 
     }
 
     editMaterial(courseId: number): void {
-      // implement add material functionality
+    console.log(courseId);
+    sessionStorage.setItem('editMaterial', JSON.stringify(courseId));
+    this.router.navigate(['/edit-material']);
     }
 
   deleteCourse(courseId: number): void {

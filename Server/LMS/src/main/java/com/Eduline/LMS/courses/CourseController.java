@@ -54,6 +54,13 @@ public class CourseController {
 	}
 
 	@CrossOrigin
+	@DeleteMapping("/deletebycategory/{categoryId}")
+	public ResponseEntity<Void> deleteCourseByCategory(@PathVariable long categoryId) {
+		courseService.deleteCoursesByCategoryId(categoryId);
+		return ResponseEntity.noContent().build();
+	}
+
+	@CrossOrigin
 	@GetMapping("/published/{instructorId}")
 	public List<Course> getAllPublishedAndUndeletedCoursesByInstructorId(@PathVariable Long instructorId) {
 		return courseService.getAllPublishedAndUndeletedCoursesByInstructorId(instructorId);
@@ -91,6 +98,16 @@ public class CourseController {
 	@GetMapping("/category/{categoryId}")
 	public List<Course> getCoursesByCategoryId(@PathVariable Long categoryId) {
 		return courseService.getAllCoursesByCategoryId(categoryId);
+	}
+
+	@GetMapping("/getallpublished")
+	public List<Course> getAllPublishedCourses() {
+		return courseService.getAllPublishedCourses();
+	}
+
+	@GetMapping("/getpublishedbycategory/{categoryId}")
+	public List<Course> getAllPublishedCoursesByCategoryId(@PathVariable Long categoryId) {
+		return courseService.getAllPublishedCoursesByCategoryId(categoryId);
 	}
 
 }
