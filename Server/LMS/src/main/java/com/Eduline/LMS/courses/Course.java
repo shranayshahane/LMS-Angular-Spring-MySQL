@@ -1,6 +1,7 @@
 package com.Eduline.LMS.courses;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "courses")
@@ -41,12 +42,13 @@ public class Course {
 	@Column(name = "thumbnail_url")
 	private String thumbnail;
 
-	// Constructors, getters and setters
+	@Column(name = "published_time")
+	private Date publishedTime;
 
 	public Course() {
 	}
 
-	public Course(String title, String description, Long instructorId, String keywords, Long price, Boolean isAuthorized, Boolean isPublished, Boolean isDeleted, Long categoryId, String thumbnail) {
+	public Course(String title, String description, Long instructorId, String keywords, Long price, Boolean isAuthorized, Boolean isPublished, Boolean isDeleted, Long categoryId, String thumbnail, Date publishedTime) {
 		this.title = title;
 		this.description = description;
 		this.instructorId = instructorId;
@@ -57,6 +59,7 @@ public class Course {
 		this.isDeleted = isDeleted;
 		this.categoryId = categoryId;
 		this.thumbnail = thumbnail;
+		this.publishedTime = publishedTime;
 	}
 
 	public Long getId() {
@@ -147,6 +150,14 @@ public class Course {
 
 	public void setThumbnail(String thumbnail) {
 		this.thumbnail = thumbnail;
+	}
+
+	public Date getPublishedTime(){
+		return publishedTime;
+	}
+
+	public void setPublishedTime(Date publishedTime){
+		this.publishedTime = publishedTime;
 	}
 
 }

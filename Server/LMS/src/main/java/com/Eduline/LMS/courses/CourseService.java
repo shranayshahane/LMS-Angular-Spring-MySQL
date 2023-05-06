@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Optional;
 
 import com.Eduline.LMS.course_materials.*;
 
@@ -51,6 +52,10 @@ public class CourseService {
 
 	public List<Course> getAllUnpublishedCoursesByInstructorId(Long instructorId) {
 		return courseRepository.findByIsPublishedFalseAndInstructorId(instructorId);
+	}
+
+	public Optional<Course> getCoursesById(Long Id) {
+		return courseRepository.findById(Id);
 	}
 
 	public List<Course> getAllPublishedCoursesByInstructorId(Long instructorId) {
@@ -122,5 +127,13 @@ public class CourseService {
 
 	public List<Course> getAllPublishedCoursesByCategoryId(Long categoryId) {
 		return courseRepository.findByIsPublishedTrueAndCategoryId(categoryId);
+	}
+
+	public List<Course> getAllAuthorizedAndUndeletedCourses() {
+		return courseRepository.findByIsAuthorizedTrueAndIsDeletedFalse();
+	}
+
+	public List<Course> getAuthorizedAndUndeletedCourseByCategoryId(Long categoryId) {
+		return courseRepository.findByIsAuthorizedTrueAndIsDeletedFalseAndCategoryId(categoryId);
 	}
 }
