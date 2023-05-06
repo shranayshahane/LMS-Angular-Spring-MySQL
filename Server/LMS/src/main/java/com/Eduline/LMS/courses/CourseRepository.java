@@ -20,4 +20,10 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
 
 	List<Course> findByIsPublishedTrueAndCategoryId(Long categoryId);
 
+	List<Course> findByIsAuthorizedTrueAndIsDeletedFalse();
+
+	List<Course> findByIsAuthorizedTrueAndIsDeletedFalseAndCategoryId(Long categoryId);
+
+
+
 }

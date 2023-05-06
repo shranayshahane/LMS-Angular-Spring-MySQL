@@ -68,6 +68,9 @@ import { EditVideoMaterialComponent } from './instructor-landing/edit-video-mate
 import { EditTextMaterialComponent } from './instructor-landing/edit-text-material/edit-text-material.component';
 import { EditFileMaterialComponent } from './instructor-landing/edit-file-material/edit-file-material.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { CourseDetailsComponent } from './student-landing/course-details/course-details.component';
+import { ViewCourseComponent } from './view-course/view-course.component';
+import { CoursesCategoryComponent } from './student-landing/courses-category/courses-category.component';
 
 
 @NgModule({
@@ -115,7 +118,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     EditPdfMaterialComponent,
     EditVideoMaterialComponent,
     EditTextMaterialComponent,
-    EditFileMaterialComponent
+    EditFileMaterialComponent,
+    CourseDetailsComponent,
+    ViewCourseComponent,
+    CoursesCategoryComponent
   ],
   imports: [
     BrowserModule,

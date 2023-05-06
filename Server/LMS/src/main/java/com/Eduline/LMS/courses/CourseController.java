@@ -12,6 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/courses")
@@ -100,14 +101,35 @@ public class CourseController {
 		return courseService.getAllCoursesByCategoryId(categoryId);
 	}
 
+	@CrossOrigin
 	@GetMapping("/getallpublished")
 	public List<Course> getAllPublishedCourses() {
 		return courseService.getAllPublishedCourses();
 	}
 
+	@CrossOrigin
 	@GetMapping("/getpublishedbycategory/{categoryId}")
 	public List<Course> getAllPublishedCoursesByCategoryId(@PathVariable Long categoryId) {
 		return courseService.getAllPublishedCoursesByCategoryId(categoryId);
 	}
+
+	@CrossOrigin
+	@GetMapping("/getbyid/{Id}")
+	public Optional<Course> getCoursesById(@PathVariable Long Id) {
+		return courseService.getCoursesById(Id);
+	}
+
+	@CrossOrigin
+	@GetMapping("/getallauthorizedandundeleted")
+	public List<Course> getAllAuthorizedandundeletedCourses() {
+		return courseService.getAllAuthorizedAndUndeletedCourses();
+	}
+
+	@CrossOrigin
+	@GetMapping("/getauthorizedandundeletedbycategory/{categoryId}")
+	public List<Course> getAllAuthorizedAndUndeletedCoursesByCategoryId(@PathVariable Long categoryId) {
+		return courseService.getAuthorizedAndUndeletedCourseByCategoryId(categoryId);
+	}
+
 
 }

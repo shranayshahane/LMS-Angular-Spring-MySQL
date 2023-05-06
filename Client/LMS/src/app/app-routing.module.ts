@@ -42,6 +42,9 @@ import { EditPdfMaterialComponent } from './instructor-landing/edit-pdf-material
 import { EditVideoMaterialComponent } from './instructor-landing/edit-video-material/edit-video-material.component';
 import { EditTextMaterialComponent } from './instructor-landing/edit-text-material/edit-text-material.component';
 import { EditFileMaterialComponent } from './instructor-landing/edit-file-material/edit-file-material.component';
+import { CourseDetailsComponent } from './student-landing/course-details/course-details.component';
+import { ViewCourseComponent } from './view-course/view-course.component';
+import { CoursesCategoryComponent } from './student-landing/courses-category/courses-category.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
@@ -49,6 +52,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'blocked', component: BlockedComponent },
   { path: 'unauthorized', component: UnauthorizedComponent },
+  { path: 'view-course', component: ViewCourseComponent },
 
   { path: 'app-admin-landing', component: AdminLandingComponent, canActivate: [AuthGuard], data: { expectedUserType: 'admin' } },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
@@ -68,6 +72,8 @@ const routes: Routes = [
   { path: 'faq', component: FaqComponent },
   { path: 'student-profile', component: StudentProfileComponent },
   { path: 'my-courses', component: MyCoursesComponent },
+  { path: 'course-details', component: CourseDetailsComponent },
+  { path: 'courses-category', component: CoursesCategoryComponent },
 
   { path: 'app-instructor-landing', component: InstructorLandingComponent, canActivate: [AuthGuard], data: { expectedUserType: 'instructor' } },
    { path: 'create-course', component: CreateCourseComponent },
