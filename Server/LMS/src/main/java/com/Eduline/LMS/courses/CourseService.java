@@ -12,6 +12,8 @@ import java.util.Optional;
 
 import com.Eduline.LMS.course_materials.*;
 
+import javax.transaction.Transactional;
+
 @Service
 public class CourseService {
 
@@ -112,6 +114,7 @@ public class CourseService {
 		return courseRepository.findByCategoryId(categoryId);
 	}
 
+	@Transactional
 	public void deleteCoursesByCategoryId(Long categoryId) {
 		List<Course> courses = courseRepository.findByCategoryId(categoryId);
 		for (Course course : courses) {
@@ -131,6 +134,10 @@ public class CourseService {
 
 	public List<Course> getAllAuthorizedAndUndeletedCourses() {
 		return courseRepository.findByIsAuthorizedTrueAndIsDeletedFalse();
+	}
+
+	public List<Course> getAllUnauthorizedAndUndeletedCourses() {
+		return courseRepository.findByIsAuthorizedFalseAndIsDeletedFalse();
 	}
 
 	public List<Course> getAuthorizedAndUndeletedCourseByCategoryId(Long categoryId) {

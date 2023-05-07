@@ -19,6 +19,7 @@ constructor(private authService: AuthService, private router: Router) { }
       // Redirect the user to the login page
       this.router.navigate(['/login']);
     }
+    this.router.navigate(['/admin-dashboard']);
   }
 
   logout() {

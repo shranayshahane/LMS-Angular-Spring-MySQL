@@ -42,4 +42,11 @@ public class CartController {
 		return new ResponseEntity<>(cart, HttpStatus.OK);
 	}
 
+	@CrossOrigin
+	@DeleteMapping("/delete/{courseId}/{studentId}")
+	public ResponseEntity<Void> deleteCategory(@PathVariable Long courseId, @PathVariable Long studentId) {
+		cartService.deleteCartByCourseIdAndStudentId(courseId, studentId);
+		return ResponseEntity.noContent().build();
+	}
+
 }

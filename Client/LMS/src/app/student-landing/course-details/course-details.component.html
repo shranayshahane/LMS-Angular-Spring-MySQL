@@ -9,11 +9,11 @@
       <ng-container *ngIf="course.price === 0; else priceTemplate" class="price-free">Free</ng-container>
       <ng-template #priceTemplate class="price">{{ course.price }}$</ng-template>
       <div class="course-buttons">
-        <button mat-raised-button color="primary" (click)="addToCart()">
-          Add to Cart
+        <button mat-raised-button color="primary" [disabled]="isInCart" (click)="addToCart()">
+          {{ isInCart ? 'Already in Cart' : 'Add to Cart' }}
         </button>
-        <button mat-raised-button color="accent" (click)="addToWishlist()">
-          Wishlist
+        <button mat-raised-button color="accent" [disabled]="isInWishlist" (click)="addToWishlist()">
+          {{ isInWishlist ? 'Already in Wishlist' : 'Add to Wishlist' }}
         </button>
       </div>
     </div>

@@ -3,6 +3,7 @@ package com.Eduline.LMS.cart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -28,6 +29,11 @@ public class CartService {
 
 	public Cart findByCourseIdAndStudentId(Long courseId, Long studentId) {
 		return cartRepository.findByCourseIdAndStudentId(courseId, studentId);
+	}
+
+	@Transactional
+	public void deleteCartByCourseIdAndStudentId(Long courseId, Long studentId) {
+		cartRepository.deleteByCourseIdAndStudentId(courseId, studentId);
 	}
 
 }

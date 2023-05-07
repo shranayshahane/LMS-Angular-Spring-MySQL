@@ -71,6 +71,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CourseDetailsComponent } from './student-landing/course-details/course-details.component';
 import { ViewCourseComponent } from './view-course/view-course.component';
 import { CoursesCategoryComponent } from './student-landing/courses-category/courses-category.component';
+import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
@@ -147,7 +149,9 @@ import { CoursesCategoryComponent } from './student-landing/courses-category/cou
     MatSelectModule,
     MatSortModule,
     DragDropModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatListModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

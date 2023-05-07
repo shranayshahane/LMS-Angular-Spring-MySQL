@@ -2,12 +2,6 @@
   <span class="logo" routerLink="/app-instructor-landing">EduLine</span>
   <nav class="navbar">
     <a mat-button routerLink="/admin-dashboard">Dashboard</a>
-    <button mat-button [matMenuTriggerFor]="analyticsMenu">Analytics</button>
-    <mat-menu #analyticsMenu="matMenu">
-      <button mat-menu-item routerLink="/app-admin-landing">Sales</button>
-      <button mat-menu-item routerLink="/app-admin-landing">sandjknas</button>
-      <button mat-menu-item routerLink="/app-admin-landing">sadfasdf</button>
-    </mat-menu>
     <button mat-button [matMenuTriggerFor]="requestsMenu">Requests</button>
     <mat-menu #requestsMenu="matMenu">
       <button mat-menu-item routerLink="/instructor-requests">Instructor</button>
@@ -20,7 +14,6 @@
       <button mat-menu-item routerLink="/manage-courses">Courses</button>
       <button mat-menu-item routerLink="/manage-categories">Categories</button>
     </mat-menu>
-    <a mat-button routerLink="/admin-faq">FAQ</a>
   </nav>
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>account_circle</mat-icon>

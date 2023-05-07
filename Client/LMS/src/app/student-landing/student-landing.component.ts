@@ -22,6 +22,7 @@ ngOnInit(): void {
   } else if (this.authService.currentUser.user.blocked) {
         this.router.navigate(['/blocked']);
       }
+  this.router.navigate(['/courses']);
 }
 
 

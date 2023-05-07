@@ -1,14 +1,9 @@
 <mat-toolbar color="primary">
   <span class="logo" routerLink="/app-instructor-landing">EduLine</span>
   <nav class="navbar">
-    <a mat-button routerLink="/instructor-dashboard">Dashboard</a>
-    <button mat-button [matMenuTriggerFor]="coursesMenu">Courses</button>
-    <mat-menu #coursesMenu="matMenu">
-      <button mat-menu-item routerLink="/create-course">Create</button>
-      <button mat-menu-item routerLink="/published-courses">Published</button>
-      <button mat-menu-item routerLink="/draft-courses">Draft</button>
-    </mat-menu>
-    <a mat-button routerLink="/instructor-faq">FAQ</a>
+    <a mat-button routerLink="/create-course">Create Course</a>
+    <a mat-button routerLink="/published-courses">Published Course</a>
+    <a mat-button routerLink="/draft-courses">Drafts</a>
   </nav>
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>account_circle</mat-icon>

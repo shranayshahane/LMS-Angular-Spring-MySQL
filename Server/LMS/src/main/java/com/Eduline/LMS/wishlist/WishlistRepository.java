@@ -13,4 +13,7 @@ public interface WishlistRepository extends JpaRepository<Wishlist, Long> {
 	List<Wishlist> findByCourseId(Long courseId);
 
 	Wishlist findByCourseIdAndStudentId(Long courseId, Long studentID);
+
+	void deleteByCourseIdAndStudentId(Long courseId, Long studentId);
+
 }

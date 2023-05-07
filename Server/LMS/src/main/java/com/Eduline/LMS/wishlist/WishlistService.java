@@ -4,6 +4,7 @@ import com.Eduline.LMS.cart.Cart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -31,5 +32,9 @@ public class WishlistService {
 		return wishlistRepository.findByCourseIdAndStudentId(courseId, studentId);
 	}
 
+	@Transactional
+	public void deleteWishlistByCourseIdAndStudentId(Long courseId, Long studentId) {
+		wishlistRepository.deleteByCourseIdAndStudentId(courseId, studentId);
+	}
 
 }

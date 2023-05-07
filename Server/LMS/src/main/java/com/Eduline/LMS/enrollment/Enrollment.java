@@ -1,11 +1,10 @@
-package com.Eduline.LMS.wishlist;
+package com.Eduline.LMS.enrollment;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
-@Table(name = "wishlist")
-public class Wishlist {
+@Table(name = "enrollments")
+public class Enrollment {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

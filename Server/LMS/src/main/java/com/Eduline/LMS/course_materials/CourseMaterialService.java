@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.transaction.Transactional;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -77,6 +78,7 @@ public class CourseMaterialService {
 		return courseMaterialRepository.save(existingCourseMaterial);
 	}
 
+	@Transactional
 	public void deleteCourseMaterialByCourseId(Long courseId) {
 		List<CourseMaterial> courseMaterials = courseMaterialRepository.findByCourseId(courseId);
 		courseMaterialRepository.deleteAll(courseMaterials);

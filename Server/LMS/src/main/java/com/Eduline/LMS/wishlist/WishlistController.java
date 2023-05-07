@@ -1,6 +1,7 @@
 package com.Eduline.LMS.wishlist;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -41,5 +42,13 @@ public class WishlistController {
 		Wishlist wishlist = wishlistService.findByCourseIdAndStudentId(courseId, studentId);
 		return new ResponseEntity<>(wishlist, HttpStatus.OK);
 	}
+
+	@CrossOrigin
+	@DeleteMapping("/delete/{courseId}/{studentId}")
+	public ResponseEntity<Void> deleteCategory(@PathVariable Long courseId,@PathVariable Long studentId) {
+		wishlistService.deleteWishlistByCourseIdAndStudentId(courseId, studentId);
+		return ResponseEntity.noContent().build();
+	}
+
 
 }

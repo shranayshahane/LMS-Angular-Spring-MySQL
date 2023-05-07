@@ -126,6 +126,13 @@ public class CourseController {
 	}
 
 	@CrossOrigin
+	@GetMapping("/getallunauthorizedandundeleted")
+	public List<Course> getAllUnauthorizedandundeletedCourses() {
+		return courseService.getAllUnauthorizedAndUndeletedCourses();
+	}
+
+
+	@CrossOrigin
 	@GetMapping("/getauthorizedandundeletedbycategory/{categoryId}")
 	public List<Course> getAllAuthorizedAndUndeletedCoursesByCategoryId(@PathVariable Long categoryId) {
 		return courseService.getAuthorizedAndUndeletedCourseByCategoryId(categoryId);

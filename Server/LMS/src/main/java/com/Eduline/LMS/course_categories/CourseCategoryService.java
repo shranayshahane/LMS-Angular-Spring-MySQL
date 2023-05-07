@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.Eduline.LMS.courses.CourseService;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,9 +37,10 @@ public class CourseCategoryService {
 		return courseCategoryRepository.save(existingCategory);
 	}
 
+	@Transactional
 	public void deleteCategory(int categoryId) {
 		Long categoryIdLong = (long) categoryId;
-		courseService.deleteCoursesByCategoryId(categoryIdLong);
+		//courseService.deleteCoursesByCategoryId(categoryIdLong);
 		courseCategoryRepository.deleteById(categoryId);
 	}
 }
